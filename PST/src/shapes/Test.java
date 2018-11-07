@@ -33,7 +33,41 @@ public class Test {
 		// znamo za l1 i p2
 		l1.getStartPoint().setX(p2.getX());
 		System.out.println("x startPoint l1: "+l1.getStartPoint().getX());
-
+		
+		Rectangle r1 = new Rectangle();
+		r1.setUpperLeft(p1);
+		r1.getUpperLeft().setX(10);
+		System.out.println("X upperLeft r1: "+r1.getUpperLeft().getX());
+		
+		Circle c1 = new Circle();
+		c1.setCenter(p2);
+		c1.getCenter().setX(10);
+		
+		// postaviti y centra c1 na vrednost y p2
+		// ne znamo koordinate tacke p2
+		c1.getCenter().setY(p2.getY());
+		System.out.println("Y center c1: "+c1.getCenter().getY());
+		
+		// postaviti x centra c1 na vrednost povrsine r1
+		c1.getCenter().setX(r1.area());
+		System.out.println("X center c1: "+c1.getCenter().getX());
+		
+		Point p3 = new Point(5, 10);
+		System.out.println("Xp3:"+p3.getX());
+		
+		Point p4 = new Point(5, 6, true); 
+		System.out.println("P4 selected: "+p4.isSelected());
+	
+		Line l2 = new Line(new Point(5, 7), new Point(15, 17), true);
+		System.out.println("l2 length: "+l2.length());
+		
+		// kreirati pravougaonik r2 sa koordinatama 
+		// upperLeft 7, 8
+		// width 5
+		// height vrednost zbira koordinata p2
+		
+		Rectangle r2 = new Rectangle(new Point(7, 8), 5, p2.getX() + p2.getY());
+		System.out.println("Pr2: "+r2.area());
 	}
 
 }
