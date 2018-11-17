@@ -15,10 +15,15 @@ public class Rectangle {
 		this.width = width;
 		this.height = height;
 	}
-	
+
 	public Rectangle(Point upperLeft, int width, int height, boolean selected) {
 		this(upperLeft, width, height);
 		this.selected = selected;
+	}
+
+	// upper left point: (xUpperLeft,yUpperLeft), width: width, height: height
+	public String toString() {
+		return "upper left point: " + upperLeft + " width: " + width + ", height: " + height;
 	}
 
 	public int area() {

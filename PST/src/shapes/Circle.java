@@ -18,6 +18,11 @@ public class Circle {
 		this(center, r);
 		this.selected = selected;
 	}
+	
+	// center: (xCenter,yCenter), radius: r 
+	public String toString() {
+		return "center: "+center+", radius: "+r;
+	}
 
 	public double area() {
 		return r * r * Math.PI;

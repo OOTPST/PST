@@ -18,6 +18,11 @@ public class Line {
 		this(startPoint, endPoint);
 		this.selected = selected;
 	}
+	
+	// (xStartPoint,yStartPoint)-->(xEndPoint,yEndPoint)
+	public String toString() {
+		return startPoint.toString() +"-->"+endPoint.toString();
+	}
 
 	public double length() {
 		double l = startPoint.distance(endPoint.getX(), endPoint.getY());

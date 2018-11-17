@@ -16,7 +16,23 @@ public class Point {
 
 	public Point(int x, int y, boolean selected) {
 		this(x, y);
-		this.selected = selected; 	
+		this.selected = selected;
+	}
+
+	public String toString() {
+		// (x,y)
+		return "(" + x + "," + y + ")";
+	}
+
+	public boolean equals(Object obj) {
+		if (obj instanceof Point) {
+			Point temp = (Point) obj;
+			if (this.getX() == temp.getX() && this.getY() == temp.getY())
+				return true;
+			else
+				return false;
+		} else
+			return false;
 	}
 
 	public double distance(int x, int y) {
