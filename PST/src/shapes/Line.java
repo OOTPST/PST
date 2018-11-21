@@ -18,10 +18,20 @@ public class Line {
 		this(startPoint, endPoint);
 		this.selected = selected;
 	}
-	
+
+	public boolean contains(int x, int y) {
+		double d1 = startPoint.distance(x, y);
+		double d2 = endPoint.distance(x, y);
+		double d = d1 + d2;
+		if (this.length() + 1 <= d)
+			return true;
+		else
+			return false;
+	}
+
 	// (xStartPoint,yStartPoint)-->(xEndPoint,yEndPoint)
 	public String toString() {
-		return startPoint.toString() +"-->"+endPoint.toString();
+		return startPoint.toString() + "-->" + endPoint.toString();
 	}
 
 	public double length() {

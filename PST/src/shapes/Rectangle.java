@@ -21,6 +21,15 @@ public class Rectangle {
 		this.selected = selected;
 	}
 
+	public boolean contains(int x, int y) {
+		if (x >= upperLeft.getX() && x <= upperLeft.getX() + width 
+				&& y >= upperLeft.getY()
+				&& y <= upperLeft.getY() + height)
+			return true;
+		else
+			return false;
+	}
+
 	// upper left point: (xUpperLeft,yUpperLeft), width: width, height: height
 	public String toString() {
 		return "upper left point: " + upperLeft + " width: " + width + ", height: " + height;

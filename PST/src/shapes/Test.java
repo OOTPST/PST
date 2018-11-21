@@ -1,5 +1,7 @@
 package shapes;
 
+import org.w3c.dom.DOMConfiguration;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -84,6 +86,15 @@ public class Test {
 		
 		System.out.println("p5 equals p6 "+p5.equals(p6));
 		System.out.println("p5 equals p7 "+p5.equals(p7));
+		
+		Point p8 = new Point(10, 11);
+		System.out.println(p8.contains(16, 11));
+		
+		//kreirati Donut d1 centar 10, 20, r = 50, innerR = 25;
+		Donut d1 = new Donut(new Point(10, 20), 50, 25);
+		System.out.println("X:"+ d1.getCenter().getX());
+		System.out.println(d1);
+			
 	}
 
 }

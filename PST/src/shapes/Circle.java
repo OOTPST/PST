@@ -1,9 +1,9 @@
 package shapes;
 
 public class Circle {
-	private Point center;
-	private int r;
-	private boolean selected;
+	protected Point center;
+	protected int r;
+	protected boolean selected;
 
 	public Circle() {
 
@@ -13,15 +13,23 @@ public class Circle {
 		this.center = center;
 		this.r = r;
 	}
-	
+
 	public Circle(Point center, int r, boolean selected) {
 		this(center, r);
 		this.selected = selected;
 	}
-	
-	// center: (xCenter,yCenter), radius: r 
+
+	public boolean contains(int x, int y) {
+		double d = center.distance(x, y);
+		if (d <= r)
+			return true;
+		else
+			return false;
+	}
+
+	// center: (xCenter,yCenter), radius: r
 	public String toString() {
-		return "center: "+center+", radius: "+r;
+		return "center: " + center + ", radius: " + r;
 	}
 
 	public double area() {
