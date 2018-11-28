@@ -1,9 +1,10 @@
 package shapes;
 
-public class Circle {
+import java.awt.Graphics;
+
+public class Circle extends Shape{
 	protected Point center;
 	protected int r;
-	protected boolean selected;
 
 	public Circle() {
 
@@ -17,6 +18,12 @@ public class Circle {
 	public Circle(Point center, int r, boolean selected) {
 		this(center, r);
 		this.selected = selected;
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawOval(center.getX()-r, center.getY()-r, 2*r, 2*r);
 	}
 
 	public boolean contains(int x, int y) {
@@ -52,11 +59,4 @@ public class Circle {
 		this.r = r;
 	}
 
-	public boolean isSelected() {
-		return selected;
-	}
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
 }

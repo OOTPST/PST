@@ -1,5 +1,7 @@
 package shapes;
 
+import java.awt.Graphics;
+
 public class Donut extends Circle {
 	private int innerR;
 
@@ -16,7 +18,14 @@ public class Donut extends Circle {
 		super(center, r, selected);
 		this.innerR = innerR;
 	}
-
+	
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		super.draw(g);
+		g.drawOval(center.getX()-innerR, center.getY()-innerR, 2*innerR, 2*innerR);
+	}
+	
 	public boolean contains(int x, int y) {
 		if (super.contains(x, y) && center.distance(x, y) >= innerR)
 			return true;

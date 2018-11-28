@@ -93,7 +93,10 @@ public class Test {
 		//kreirati Donut d1 centar 10, 20, r = 50, innerR = 25;
 		Donut d1 = new Donut(new Point(10, 20), 50, 25);
 		System.out.println("X:"+ d1.getCenter().getX());
-		System.out.println(d1);
+		System.out.println(d1.isSelected());
+		
+		Shape s = new Point();
+		s.contains(10, 15);
 			
 	}
 

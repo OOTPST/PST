@@ -1,9 +1,10 @@
 package shapes;
 
-public class Line {
+import java.awt.Graphics;
+
+public class Line extends Shape{
 	private Point startPoint;
 	private Point endPoint;
-	private boolean selected;
 
 	public Line() {
 
@@ -17,6 +18,25 @@ public class Line {
 	public Line(Point startPoint, Point endPoint, boolean selected) {
 		this(startPoint, endPoint);
 		this.selected = selected;
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Line) {
+			Line temp = (Line) obj;
+			if (this.getStartPoint().equals(temp.getStartPoint()) && 
+					this.getEndPoint().equals(temp.getEndPoint()))
+				return true;
+			else
+				return false;
+		} else
+			return false;
+	}
+	
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		g.drawLine(startPoint.getX(), startPoint.getY(), endPoint.getX(), endPoint.getY());
 	}
 
 	public boolean contains(int x, int y) {
@@ -55,12 +75,5 @@ public class Line {
 		this.endPoint = endPoint;
 	}
 
-	public boolean isSelected() {
-		return selected;
-	}
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
 
 }
