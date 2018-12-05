@@ -21,6 +21,21 @@ public class Rectangle extends Shape{
 		this(upperLeft, width, height);
 		this.selected = selected;
 	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Rectangle) {
+			Rectangle temp = (Rectangle) o;
+			return this.area() - temp.area(); 
+		}
+		return 0;
+	}
+	
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		this.upperLeft.moveBy(byX, byY);
+	}
 
 	@Override
 	public void draw(Graphics g) {
@@ -69,6 +84,5 @@ public class Rectangle extends Shape{
 	public void setHeight(int height) {
 		this.height = height;
 	}
-
 
 }

@@ -21,6 +21,21 @@ public class Circle extends Shape{
 	}
 	
 	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Circle) {
+			Circle temp = (Circle) o;
+			return (int) (this.area() - temp.area()); 
+		}
+		return 0;
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		center.moveBy(byX, byY);
+	}
+	
+	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
 		g.drawOval(center.getX()-r, center.getY()-r, 2*r, 2*r);

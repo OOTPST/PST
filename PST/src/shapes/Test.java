@@ -1,5 +1,9 @@
 package shapes;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
 import org.w3c.dom.DOMConfiguration;
 
 public class Test {
@@ -97,7 +101,61 @@ public class Test {
 		
 		Shape s = new Point();
 		s.contains(10, 15);
-			
+		
+		int[] niz = {3,2,5,4};
+		for (int i = 0; i < niz.length; i++) {
+			System.out.println(niz[i]);
+		}
+		
+		Arrays.sort(niz);
+		System.out.println("sortiran niz:");
+		for (int i = 0; i < niz.length; i++) {
+			System.out.println(niz[i]);
+		}
+		
+		Line l10 = new Line(new Point(10, 10), new Point(100, 100));
+		Line l20 = new Line(new Point(10, 10), new Point(200, 200));
+		Line l30 = new Line(new Point(10, 10), new Point(300, 300));
+
+		Line [] lines = {l20, l10, l30};
+		System.out.println("nesortiran niz:");
+		for (int i = 0; i < lines.length; i++) {
+			System.out.println(lines[i].length());
+		}
+		
+		Arrays.sort(lines);
+		
+		System.out.println("sortiran niz:");
+		for (int i = 0; i < lines.length; i++) {
+			System.out.println(lines[i].length());
+		}
+		
+		Circle d = new Donut();
+		// Donut c = new Circle(); ne moze
+		// Shape s = new Shape(); ne moze
+		Moveable m = new Point();
+		Shape l = new Line();
+		
+		ArrayList<Shape> shapes = new ArrayList<Shape>();
+		shapes.add(p1);
+		shapes.add(l1);
+		shapes.add(r1);
+		shapes.add(c1);
+		shapes.add(d1);
+		
+		shapes.get(0).isSelected();
+		
+		shapes.add(1, p2);
+		shapes.remove(3);
+		
+		System.out.println("prolaz kroz listu pomocu iteratora");
+		Iterator<Shape> it = shapes.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+			System.out.println(it.next());
+		}
+		
+		
 	}
 
 }

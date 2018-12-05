@@ -31,7 +31,23 @@ public class Line extends Shape{
 		} else
 			return false;
 	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		// TODO Auto-generated method stub
+		startPoint.moveBy(byX, byY);
+		endPoint.moveBy(byX, byY);
+	}
 	
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		if (o instanceof Line) {
+			Line temp = (Line) o;
+			return (int) (this.length() - temp.length());
+		}
+		return 0;
+	}
 
 	@Override
 	public void draw(Graphics g) {
@@ -74,6 +90,5 @@ public class Line extends Shape{
 	public void setEndPoint(Point endPoint) {
 		this.endPoint = endPoint;
 	}
-
 
 }

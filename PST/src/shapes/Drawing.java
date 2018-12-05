@@ -29,5 +29,7 @@ public class Drawing extends JPanel {
 		
 		Donut d1 = new Donut(new Point(400, 500), 150, 75);
 		d1.draw(g);
+		d1.moveBy(20, 20);
+		d1.draw(g);
 	}
  }
