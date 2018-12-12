@@ -1,5 +1,6 @@
 package shapes;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Circle extends Shape{
@@ -38,7 +39,16 @@ public class Circle extends Shape{
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
+		g.setColor(Color.BLACK);
 		g.drawOval(center.getX()-r, center.getY()-r, 2*r, 2*r);
+		if(selected) {
+			g.setColor(Color.BLUE);
+			g.drawRect(center.getX()-3, center.getY()-3, 6, 6);
+			g.drawRect(center.getX()-3, center.getY()-r-3, 6, 6);
+			g.drawRect(center.getX()-r-3, center.getY()-3, 6, 6);
+			g.drawRect(center.getX()+r-3, center.getY()-3, 6, 6);
+			g.drawRect(center.getX()-3, center.getY()+r-3, 6, 6);
+		}
 	}
 
 	public boolean contains(int x, int y) {
@@ -70,7 +80,9 @@ public class Circle extends Shape{
 		return r;
 	}
 
-	public void setR(int r) {
+	public void setR(int r) throws Exception{
+		if(r < 0)
+			throw new Exception("Broj je negativan");
 		this.r = r;
 	}
 

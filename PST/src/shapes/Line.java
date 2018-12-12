@@ -1,5 +1,6 @@
 package shapes;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Line extends Shape{
@@ -52,7 +53,13 @@ public class Line extends Shape{
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
+		g.setColor(Color.BLACK);
 		g.drawLine(startPoint.getX(), startPoint.getY(), endPoint.getX(), endPoint.getY());
+		if(selected) {
+			g.setColor(Color.BLUE);
+			g.drawRect(startPoint.getX()-3, startPoint.getY()-3, 6, 6);
+			g.drawRect(endPoint.getX()-3, endPoint.getY()-3, 6, 6);
+		}
 	}
 
 	public boolean contains(int x, int y) {

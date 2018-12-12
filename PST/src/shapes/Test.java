@@ -152,8 +152,27 @@ public class Test {
 		Iterator<Shape> it = shapes.iterator();
 		while(it.hasNext()) {
 			System.out.println(it.next());
-			System.out.println(it.next());
+			//System.out.println(it.next());
 		}
+		
+		try {
+			System.out.println(lines[2]);
+			Integer.parseInt("5");
+			c1.setR(-50);
+		} 
+		catch (ArrayIndexOutOfBoundsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("niz nema toliko elemenata!");
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Ne mogu da pretvorim String u int");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		System.out.println("ispisao sam se na konzolu");
 		
 		
 	}

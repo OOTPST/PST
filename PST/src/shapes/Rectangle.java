@@ -1,5 +1,6 @@
 package shapes;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Rectangle extends Shape{
@@ -40,7 +41,15 @@ public class Rectangle extends Shape{
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
+		g.setColor(Color.BLACK);
 		g.drawRect(upperLeft.getX(), upperLeft.getY(), width, height);
+		if(selected) {
+			g.setColor(Color.BLUE);
+			g.drawRect(upperLeft.getX()-3, upperLeft.getY()-3, 6, 6);
+			g.drawRect(upperLeft.getX()+width-3, upperLeft.getY()-3, 6, 6);
+			g.drawRect(upperLeft.getX()-3, upperLeft.getY()+height-3, 6, 6);
+			g.drawRect(upperLeft.getX()+width-3, upperLeft.getY()+height-3, 6, 6);
+		}
 	}
 
 	public boolean contains(int x, int y) {
